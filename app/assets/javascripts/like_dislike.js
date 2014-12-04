@@ -1,4 +1,5 @@
-$(document).ready(function() {
+//= require jquery.turbolinks
+$(document).on('ready page:load', function () {
 	$(".voting_wrapper .voting_btn").click(function (e) {
 		var clicked_button = $(this).children().attr('class');
 		var unique_id = $(this).parent().attr("id");
