@@ -6,6 +6,7 @@
 Gemfile.lock
 InstalledFiles
 _yardoc
+*.DS_Store
 coverage
 doc/
 lib/bundler/man

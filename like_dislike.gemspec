@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.licenses       = ["MIT"]
 
   spec.files         = `git ls-files`.split("\n")
-  spec.files         = Dir.glob("{bin,lib,app/assets/javascripts,app/assets/stylesheets}/**/*")
+  spec.files         = Dir.glob("{bin,lib,app,config}/**/*")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]

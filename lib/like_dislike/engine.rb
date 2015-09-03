@@ -3,8 +3,7 @@ require 'acts_as_votable'
 require 'jquery-turbolinks'
 
 module LikeDislike
-  module Rails
-    class Engine < ::Rails::Engine
-    end
+  class Engine < ::Rails::Engine
+    isolate_namespace LikeDislike
   end
 end
