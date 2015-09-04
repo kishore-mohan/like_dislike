@@ -34,6 +34,29 @@ And then execute:
   Finally
     rake db:migrate
 
+##Usage
+
+  Add below code in you Votable Model reesource.
+
+  acts_as_votable
+
+  For eg:
+
+  class Comment < ActiveRecord::Base
+    acts_as_votable
+  end
+
+  Add below code in your Voter Resource Model resource.
+
+  acts_as_voter
+
+  For eg:
+
+  class User < ActiveRecord::Base
+    acts_as_voter
+  end
+  
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/like_dislike/fork )
