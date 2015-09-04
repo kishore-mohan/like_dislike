@@ -1,15 +1,17 @@
-<div id=<%=likeable.class.to_s.downcase%>-<%=likeable.id %> class = "like">
-<% if current_user.liked? likeable %>
-  <%= form_tag "downvote?likeable_type=#{likeable.class.to_s}&likeable_id=#{likeable.id}", method: :post, remote: true do %>
+<% if current_user %>
+  <div id=<%=likeable.class.to_s.downcase%>-<%=likeable.id %> class = "like">
+    <% if current_user.liked? likeable %>
+    <%= form_tag "downvote?likeable_type=#{likeable.class.to_s}&likeable_id=#{likeable.id}", method: :post, remote: true do %>
     <% button_tag class: 'btn btn-block liked' do %>
-       unlike
+    unlike
     <% end %>
-  <% end %>
-<% else %>
-  <%= form_tag "/upvote?likeable_type=#{likeable.class.to_s}&likeable_id=#{likeable.id}",remote: true do %>
+    <% end %>
+    <% else %>
+    <%= form_tag "/upvote?likeable_type=#{likeable.class.to_s}&likeable_id=#{likeable.id}",remote: true do %>
     <% button_tag class: 'btn btn-block' do %>
-       like
+    like
     <% end %>
-  <% end %>
+    <% end %>
+    <% end %>
+  </div>
 <% end %>
-</div>
