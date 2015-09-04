@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.platform      = Gem::Platform::RUBY
   spec.authors       = ["kishore-mohan"]
   spec.email         = ["kishorevlrtn@gmail.com"]
-  spec.summary       = "Like Dislike by user and Vote and Unvote by user "
+  spec.summary       = "Like Dislike by user and Vote and Unvote by user"
   spec.description   = "Like Dislike/Unlike by user by any object resource, dependency of act_as_votable"
   spec.homepage      = "https://github.com/kishore-mohan/like_dislike"
   spec.licenses       = ["MIT"]
