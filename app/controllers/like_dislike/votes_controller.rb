@@ -6,13 +6,20 @@ module LikeDislike
 
     def create
       @likeable.liked_by current_user
+      render json: render_votes
     end
 
     def destroy
       @likeable.disliked_by current_user
+      render json: render_votes
     end
 
     private
+
+    def render_votes
+      [@likeable.cached_votes_up, @likeable.cached_votes_down]
+    end
+
     def find_likeable
       @likeable_type = params[:likeable_type].classify
       @likeable = @likeable_type.constantize.find(params[:likeable_id])
