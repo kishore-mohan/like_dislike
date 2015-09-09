@@ -20,42 +20,65 @@ And then execute:
   
   Create migration for Votes polymorphic table for vote entries for all the resource
 
+  ```ruby
     rails g like_dislike:migration
+  ```
 
-  For Caching and finding the vote counts easily, vote counts can be maintain on the resource level also.(#Optional)
+  For Caching and finding the vote counts easily, vote counts can be maintained on the resource level run this.
 
-    rails g like_dislike:migration TableName
-
+  ```ruby
+  rails g like_dislike:migration TableName
+  ```
   eg: 
-
-    rails g like_dislike:migration Post
-    rails g like_dislike:migration Comment
-
-  Finally
-    rake db:migrate
-
+  ```ruby
+  rails g like_dislike:migration Post
+  rails g like_dislike:migration Comment
+  ```
+  Finally run:
+  ```ruby
+  rake db:migrate
+  ```
 ##Usage
 
   Add below code in you Votable Model reesource.
-
+  ```ruby
   acts_as_votable
-
+  ```
   For eg:
-
+  ```ruby
   class Comment < ActiveRecord::Base
     acts_as_votable
   end
-
+  ```
   Add below code in your Voter Resource Model resource.
-
+  ```ruby
   acts_as_voter
-
+  ```
   For eg:
-
+  ```ruby
   class User < ActiveRecord::Base
     acts_as_voter
   end
-  
+  ```
+
+  require the file in javascript and stylesheet in application:
+  ```ruby
+  #in application.js
+  //= require like_dislike
+  #in application.css
+  *= require like_dislike
+  ```
+
+  Here the ultimate things comes, add this line wherever you want like and dislike button want to enable with resource:
+  ```ruby
+  <%= like_unlike_button(resource) %>
+  ```
+
+  For eg:
+  ```ruby
+  #bookmark is the object
+  <%= like_unlike_button(bookmark) %>  
+  ```
 
 ## Contributing
 
